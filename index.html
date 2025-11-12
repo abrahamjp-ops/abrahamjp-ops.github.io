@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💌 Página Especial 💌</title>
+  <link rel="stylesheet" href="style-v2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Parisienne&display=swap" rel="stylesheet">
+</head>
+
+<canvas id="fondoAnimado"></canvas>
+<script src="script.js"></script>
+
+<body>
+  <!-- Dedicatoria principal -->
+  <header class="inicio">
+    <h1>💌 LUNA GRACIAS POR.. 💌</h1>
+  </header>
+
+  <!-- Sección 1 -->
+  <section class="bloque derecha">
+    <div class="contenedor-imagen-texto izquierda">
+      <a href="dedicatoria1.html">
+      <img src="img/ella_amanecer.jpeg" alt="Foto 1" class="imagen" onclick="window.open('dedicatoria1.html','_blank')">
+      </a>
+      <p> Que el tiempo pase viendonos reir... </p>
+    </div>
+  </section>
+
+  <!-- Sección 2 -->
+  <section class="bloque izquierda">
+    <div class="contenedor-imagen-texto derecha">
+      <a href="dedicatoria2.html">
+      <img src="img/beso_pasillo.jpeg" alt="Foto 2" class="imagen" onclick="window.open('dedicatoria2.html','_blank')">
+      </a>
+      <p>Descanza tu cabeza sobre mi pecho y sentiras como mi corazon te asegura que eres mas que importante para mi...</p>
+    </div>
+  </section>
+
+  <!-- Sección 3 -->
+  <section class="bloque derecha">
+    <div class="contenedor-imagen-texto izquierda">
+       <a href="dedicatoria3.html">
+     <img src="img/los2_avilanoche.jpeg" alt="Foto 3" class="imagen" onclick="window.open('dedicatoria3.html','_blank')">
+     </a>
+    <p>No es lo que siento por ti, es lo que no siento por nadie mas...</p>
+    </div>
+    
+  </section>
+
+  <!-- Sección 4 -->
+  <section class="bloque izquierda">
+   <div class="contenedor-imagen-texto derecha">
+     <a href="dedicatoria4.html">
+    <img src="img/elle_bebe.jpeg" alt="Foto 4" class="imagen" onclick="window.open('dedicatoria4.html','_blank')">
+    </a>
+      <p>No se por que, ni como pero hay canciones que me hacen amarte...</p>
+    </div>
+  </section>
+
+   <!-- Sección 5 -->
+  <section class="bloque derecha">
+    <div class="contenedor-imagen-texto izquierda">
+      <a href="dedicatoria6.html">
+    <img src="img/ella_linda.jpeg" alt="Foto 5" class="imagen" onclick="window.open('dedicatoria6.html','_blank')">
+    </a>
+      <p>No todas las estrellas estan en el cielo, algunas estan aqui sobre la tierra, en tu mirada por ejemplo...</p>
+    </div>
+  </section>
+
+   <!-- Sección 6 -->
+  <section class="bloque izquierda">
+    <div class="contenedor-imagen-texto derecha">
+      <a href="dedicatoria7.html">
+      <img src="img/quince1.jpeg" alt="Foto 6" class="imagen" onclick="window.open('dedicatoria7.html','_blank')">
+      </a>
+    <p>Conocerte pudo ser cuestion de suerte o una simple coincidencia, pero prefiero pensarlo como un regalo que me dio etsa vida...</p>
+    </div>
+     
+  </section>
+
+  <!-- Sección 8 -->
+  <section class="bloque derecha">
+     <div class="contenedor-imagen-texto izquierda">
+       <a href="dedicatoria8.html">
+    <img src="img/brinca_este.jpeg" alt="Foto 7" class="imagen" onclick="window.open('dedicatoria8.html','_blank')">
+    </a>
+    <p>Sabes, no siempre tengo cosas interesantes que contarte, pero siempre tengo ganas de hablar contigo...</p>
+    </div>
+  </section>
+
+
+<script src="script.js"></script>
+
+<script>
+const audio = document.getElementById('audio');
+const playPauseBtn = document.getElementById('playPauseBtn');
+
+playPauseBtn.addEventListener('click', () => {
+  if (audio.paused) {
+    audio.play();
+    playPauseBtn.textContent = '⏸️ Pausar';
+  } else {
+    audio.pause();
+    playPauseBtn.textContent = '▶️ Reproducir';
+  }
+});
+</script>
+
+<!-- Última sección: texto y música centrados -->
+<div class="final-section">
+  <p class="final-text">
+    LUNA TE AMO Y SI LO ANTERIOR NO ES SUFICIENTE
+    TE DEDICO OTRA CANCION QUE SI O SI TENEMOS QUE BAILAR
+  </p>
+
+  <audio class="final-audio" controls>
+    <source src="musica/elvispresley.mp3" type="audio/mpeg">
+    Tu navegador no soporta el reproductor.
+  </audio>
+</div>
+
+<script>
+  // Selecciona todos los enlaces internos
+  const links = document.querySelectorAll('a');
+
+  links.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const url = link.getAttribute('href');
+
+      // Solo aplicar a enlaces internos
+      if(url && !url.startsWith('#') && !url.startsWith('http')) {
+        e.preventDefault(); // evita el cambio instantáneo
+        document.body.style.opacity = 0; // inicia fade out
+        setTimeout(() => {
+          window.location.href = url; // luego cambia de página
+        }, 500); // coincide con la duración de la transición
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+/* --- BODY --- */
+body {
+  margin: 0;
+  position: relative;
+  font-family: 'Courgette', cursive;
+  color: rgb(255, 255, 255);
+  background-color: #5a001f; /* tu vinotinto claro de fondo */
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* --- CANVAS DE FONDO --- */
+#fondoAnimado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -9999;      /* queda detrás de todo */
+  pointer-events: none; /* no bloquea clics */
+}
+
+/* --- SECCIONES DE CONTENIDO --- */
+.seccion {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+
+
+/* --- TITULOS --- */
+h1, h2, h3 {
+  margin: 20px 0;
+}
+
+/* --- TEXTO --- */
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+
+/* --- BOTONES (por ejemplo, reproducir música) --- */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff69b4;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+button:hover {
+  background-color: #ff85c1;
+}
+
+/* --- REPRODUCTOR DE MÚSICA --- */
+.reproductor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.reproductor .portada {
+  width: 180px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.reproductor audio{
+width:300px;
+height:30px;
+}
+
+
+.reproductor .info {
+  text-align: center;
+}
+
+/* --- IMÁGENES CON TEXTO LADO A LADO --- */
+.contenedor-imagen-texto {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* ajusta según izquierda/derecha */
+  margin: 30px 0;
+}
+
+
+.contenedor-imagen-texto {
+  display: flex;
+  align-items: center;
+  margin: 40px auto;
+  max-width: 800px; /* ancho máximo del bloque */
+}
+
+.contenedor-imagen-texto img {
+  width: 150px; /* tamaño uniforme para todas */
+  height: 150px;
+  border-radius: 12px;
+  object-fit: cover; /* evita que se estire la imagen */
+}
+
+.contenedor-imagen-texto.izquierda {
+  flex-direction: row; /* imagen izquierda, texto derecha */
+}
+
+.contenedor-imagen-texto.derecha {
+  flex-direction: row-reverse; /* imagen derecha, texto izquierda */
+}
+
+.contenedor-imagen-texto p {
+  margin: 0 20px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+h1 {
+  text-align: center; /* centra el título */
+  margin: 40px 0;     /* espacio arriba y abajo */
+}
+
+/* 🌟 Animación de estrellas volando (solo visible en subpáginas) */
+.star {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  background: rgb(0, 0, 0);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: flyStar 10s linear infinite;
+  z-index: 0;
+}
+
+/* Animación: las estrellas se mueven suavemente hacia arriba */
+@keyframes flyStar {
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) translateX(calc(100vw * var(--dir)));
+    opacity: 0;
+  }
+}
+
+/* --- CSS SUBPÁGINA --- */
+body.subpage {
+  background-color: #020224; /* color de fondo de esta subpágina */
+  color: white;              /* color del texto */
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.imagen-sub {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  margin-bottom: 30px;
+}
+
+.reproductor audio {
+  width: 80%;
+  margin-bottom: 30px;
+}
+
+.dedicatoria-texto p {
+  font-size: 1.5em;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --- ÚLTIMA SECCIÓN FINAL --- */
+.final-section {
+  text-align: center;      /* centra todo */
+  margin-top: 50px;        /* separa de la sección anterior */
+}
+
+.final-section .final-text {
+  font-size: 1.2em;        /* tamaño de texto agradable */
+  color: white;            /* ajusta según tu fondo */
+  max-width: 800px;
+  margin: 0 auto 20px;     /* centrado y espacio abajo */
+}
+
+.final-section .final-audio {
+  width: 80%;              /* reproductor centrado y ancho adaptable */
+  max-width: 400px;        /* no se haga demasiado grande */
+}
+
+/* Transición para todo el body */
+body {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out; /* tiempo de desvanecimiento */
+}

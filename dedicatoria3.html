@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dedicación 1</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Parisienne&display=swap" rel="stylesheet">
+  <style>
+    /* --- Fondo y texto de la subpágina --- */
+    body.subpage {
+      background-color: #0a0a23; /* color de fondo, cámbialo si quieres */
+      color: white;              /* color del texto */
+      font-family: 'courgette', 'cursive';
+      text-align: center;
+      padding: 50px 20px;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    /* --- Imagen centrada --- */
+    .imagen-sub {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      margin-bottom: 30px;
+    }
+
+    /* --- Reproductor de música centrado --- */
+    .reproductor {
+      margin-bottom: 30px;
+    }
+
+    .reproductor audio {
+      width: 80%;
+      max-width: 400px;
+    }
+
+    /* --- Texto de dedicatoria --- */
+    .dedicatoria-texto p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    /* --- Texto final abajo de la canción --- */
+    .final-texto p {
+      font-size: 1.1em;
+      line-height: 1.5;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    /* --- Botón volver --- */
+    .boton-volver {
+      display: inline-block;
+      margin-top: 40px;
+      background-color: #fff;
+      color: #0a0a23;
+      padding: 10px 25px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .boton-volver:hover {
+      background-color: #f0f0f0;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="subpage">
+
+  <!-- Imagen centrada -->
+  <img src="img/los2_avilanoche.jpeg" alt="Foto dedicada" class="imagen-sub">
+
+  <!-- Reproductor de música -->
+  <div class="reproductor">
+    <h3> 🌆 San Lucas 🌆 </h3>
+    <audio src="musica/kevinkarl.mp3" controls></audio>
+  </div>
+
+  <!-- Texto dedicatoria -->
+  <div class="dedicatoria-texto">
+    <p>Gracias por la esperanza de un futuro mejor, Luna antes de ti no quería nada, ahora quiero todo. Quiero luchar y quiero ser feliz pero teniéndote a ti, no solo físicamente si no lo que eres tu. Lo que te hace especial, lo que te hace hermosa y que seas feliz para escaparnos en nuestro mundo. 🌌</p>
+  </div>
+
+
+  <a href="../index.html" class="boton-volver">← Volver a la página principal</a>
+
+</body>
+</html>
